@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019-2020 João Pedro Martins Neves - All Rights Reserved.
+ * Copyright (c) 2019-2026 João Pedro Martins Neves - All Rights Reserved.
  *
  * js.system.collections is licensed under the MIT license,
  * located in the root of this project, under the name "LICENSE.md".
@@ -146,6 +146,55 @@ describe( 'The Dict', function () {
   afterAll( function () {
     global.myDict = null;
     global.myDict = undefined;
+  } );
+
+} );
+
+describe( 'The Dict edge cases', function () {
+
+  it( 'should support the numeric key 0 and the empty string key', function () {
+    const dict = new Dict();
+
+    expect( dict.add( 0, 'zero-value' ) ).not.toBeFalse();
+    expect( dict.add( '', 'empty-key-value' ) ).not.toBeFalse();
+
+    expect( dict.getValue( 0 ) ).toBe( 'zero-value' );
+    expect( dict.getValue( '' ) ).toBe( 'empty-key-value' );
+  } );
+
+  it( 'should keep numeric keys reachable after a growth rehash', function () {
+    const dict = new Dict();
+    const numOfItems = 40; // > defaultSize (32), forces a rehash.
+
+    for ( let i = 0; i < numOfItems; ++i ) {
+      dict.add( i, 'val' + i );
+    }
+
+    for ( let i = 0; i < numOfItems; ++i ) {
+      expect( dict.getValue( i ) ).toBe( 'val' + i );
+    }
+  } );
+
+  it( 'should not corrupt the count when removing a non-existing key', function () {
+    const dict = new Dict();
+    dict.add( 'one', 1 );
+
+    expect( dict.remove( 'does-not-exist' ) ).toBeFalse();
+    expect( dict.count ).toBe( 1 );
+    expect( dict.getValue( 'one' ) ).toBe( 1 );
+  } );
+
+  it( 'should not hang when looking up a key absent from a heavily churned table', function () {
+    const dict = new Dict();
+
+    for ( let i = 0; i < 100; ++i ) {
+      dict.add( 'k' + i, i );
+      if ( i % 2 === 0 ) {
+        dict.remove( 'k' + i );
+      }
+    }
+
+    expect( dict.getValue( 'does-not-exist' ) ).toBeUndefined();
   } );
 
 } );

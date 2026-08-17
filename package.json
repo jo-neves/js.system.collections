@@ -1,24 +1,24 @@
 {
   "name": "js.system.collections",
   "description": "Vanilla JavaScript ES collections inspired by .NET for Node.js and the browser.",
-  "version": "1.7.3",
+  "version": "1.8.0",
   "main": "index.js",
   "scripts": {
     "test": "node test/test.js"
   },
   "author": {
-    "name": "shivayl (João Neves)",
-    "url": "https://shivayl.com"
+    "name": "João Neves",
+    "url": "https://github.com/jo-neves"
   },
   "license": "MIT",
-  "homepage": "https://github.com/joao-neves95/js.system.collections",
-  "readme": "https://github.com/joao-neves95/js.system.collections/blob/master/README.md",
+  "homepage": "https://github.com/jo-neves/js.system.collections",
+  "readme": "https://github.com/jo-neves/js.system.collections/blob/master/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/joao-neves95/js.system.collections"
+    "url": "https://github.com/jo-neves/js.system.collections"
   },
   "bugs": {
-    "url": "https://github.com/joao-neves95/js.system.collections/issues"
+    "url": "https://github.com/jo-neves/js.system.collections/issues"
   },
   "deprecated": false,
   "keywords": [
@@ -26,7 +26,6 @@
     "utility",
     "utilities",
     "data structures",
-    "dotnet",
     "collections",
     "dictionary",
     "list"

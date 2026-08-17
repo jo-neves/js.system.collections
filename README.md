@@ -40,11 +40,13 @@ or
 ```
 
 #### Use from the browser (using the `window` object)
+
 ```js
 const myDict = new Dictionary( true );
 ```
 
 #### Use with CommonJS (For environments that support `module.exports`, like Node.js)
+
 ```js
 // Pointing to node_modules/ (Node.js), or dist/
 const { Dictionary, List } = require( 'js.system.collections' );
@@ -61,10 +63,12 @@ const myStringList = new List( 'string' );
 2. [Dict](#dict)
 3. [Dictionary](#dictionary)
 4. [DictionaryObj](#dictionaryObj)
+5. [Stack](#stack)
 
 [^API](#api-index)
 
 #### **List( type )** <a name="list"></a>
+
 ```js
   /**
   * @param {String} type The Type of the list.
@@ -75,11 +79,13 @@ const myStringList = new List( 'string' );
 ```
 
 - **length**
+
   ```js
   .length
   ```
 
 - **clear()**
+
   ```js
   /**
    * Sets the array storage value to null and creates a new one.
@@ -89,6 +95,7 @@ const myStringList = new List( 'string' );
   ```
 
 - **clearSafe()**
+
   ```js
   /**
    * Pops every element of the array storage,
@@ -99,6 +106,7 @@ const myStringList = new List( 'string' );
   ```
 
 - **last**
+
     ```js
     /**
         * Returns the last element of the List or false.
@@ -109,6 +117,7 @@ const myStringList = new List( 'string' );
     ```
 
 - **getAll()**
+
     ```js
     /**
      * Get all elements from the Collection.
@@ -120,6 +129,7 @@ const myStringList = new List( 'string' );
     ```
 
 - **get( index )**
+
     ```js
     /**
      * Get an item from the Collection by index.
@@ -131,6 +141,7 @@ const myStringList = new List( 'string' );
     ```
 
 - **contains( value )**
+
     ```js
     /**
      * Returns true if the List contains at least one value,
@@ -142,6 +153,7 @@ const myStringList = new List( 'string' );
     ```
 
 - **add( value )**
+
     ```js
     /**
       * Add a new item to the List<T>.
@@ -151,6 +163,7 @@ const myStringList = new List( 'string' );
     ```
 
 - **update( index, value )**
+
     ```js
     /**
       * Update an item by index.
@@ -161,6 +174,7 @@ const myStringList = new List( 'string' );
     ```
 
 - **remove( index )**
+
     ```js
     /**
      * Remove an new item from the List<T> by index.
@@ -171,16 +185,19 @@ const myStringList = new List( 'string' );
     ```
 
 - **removeFirst()**
+
   ```js
   .removeFirst()
   ```
 
 - **removeLast()**
+
   ```js
   .removeLast()
   ```
 
 - **forEach( index )**
+
   ```js
   /**
    * Remove an new item from the List<T> by index.
@@ -193,6 +210,7 @@ const myStringList = new List( 'string' );
 [^API](#api-index)
 
 #### **Dict( initialSize )** <a name="dict"></a>
+
 ```js
 /**
  * Optimized dictionary of key-value pairs.
@@ -205,6 +223,7 @@ const myStringList = new List( 'string' );
 ```
 
 - **count**
+
   ```js
   /**
    * The count of actual items.
@@ -214,6 +233,7 @@ const myStringList = new List( 'string' );
   ```
 
 - **length**
+
   ```js
   /**
    * The current length of the underlying hashtable.
@@ -223,6 +243,7 @@ const myStringList = new List( 'string' );
   ```
 
 - **clear()**
+
   ```js
   /**
    * Sets the array storage value to null and creates a new one.
@@ -232,6 +253,7 @@ const myStringList = new List( 'string' );
   ```
 
 - **clearSafe()**
+
   ```js
   /**
    * Pops every element of the array storage,
@@ -242,17 +264,19 @@ const myStringList = new List( 'string' );
   ```
 
 - **getAllValues()**
+
   ```js
   /**
    * Returns an array with all the dictionary's values.
    * O(n)
-   * 
+   *
    * @returns { any[] }
    */
   .getAllValues()
   ```
 
 - **getAllKeys()**
+
   ```js
   /**
    * Returns an array with all the dictionary's keys.
@@ -264,6 +288,7 @@ const myStringList = new List( 'string' );
   ```
 
 - **getHashedKey( key )**
+
   ```js
   /**
    * Returns the current hashed key of an item or false if not found.
@@ -277,6 +302,7 @@ const myStringList = new List( 'string' );
   ```
 
 - **getValue( key )**
+
   ```js
   /**
    * Returns the value by key (volatile) or false if not found.
@@ -290,18 +316,20 @@ const myStringList = new List( 'string' );
   ```
 
 - **getIndexVal( key )**
+
   ```js
   /**
    * ~O(1)
-   * 
+   *
    * @param { number | string } key
-   * 
+   *
    * @returns { [number, any] | undefined } [index, value]
    */
   .getIndexVal( key )
   ```
 
 - **containsKey( key )**
+
   ```js
   /**
    * ~O(1)
@@ -314,24 +342,26 @@ const myStringList = new List( 'string' );
   ```
 
 - **add( key, value )**
+
   ```js
   /**
    * O(1), worst case O(n)
-   * 
+   *
    * @param { string | number } key
    * @param { any } value
-   * 
+   *
    * @returns { number | false } The new index or false.
    */
   .add( key, value )
   ```
 
 - **remove( key )**
+
   ```js
   /**
    * Removes an item from the Dictionary with the provided key.
    * O(1), worst case O(n)
-   * 
+   *
    * @param { string | number } key
    *
    * @return { number | false } The index or false.
@@ -340,6 +370,7 @@ const myStringList = new List( 'string' );
   ```
 
 - **update( key, newValue )**
+
   ```js
   /**
    * Updates an item in the Dictionary with the provided key.
@@ -354,10 +385,11 @@ const myStringList = new List( 'string' );
   ```
 
 - **forEachValue( Callback )**
+
   ```js
   /**
    * O(n)
-   * 
+   *
    * @param { Function } Callback (value)
    */
   .forEachValue( Callback )
@@ -366,6 +398,7 @@ const myStringList = new List( 'string' );
 [^API](#api-index)
 
 #### **Dictionary( uniqueKeys = false )** <a name="dictionary"></a>
+
 ```js
 /**
  * Dictionary of key-value pairs.
@@ -381,11 +414,13 @@ const myStringList = new List( 'string' );
 ```
 
 - **length**
+
   ```js
   .length
   ```
 
 - **clear()**
+
   ```js
   /**
    * Sets the array storage value to null and creates a new one.
@@ -395,6 +430,7 @@ const myStringList = new List( 'string' );
   ```
 
 - **clearSafe()**
+
   ```js
   /**
    * Pops every element of the array storage,
@@ -405,11 +441,13 @@ const myStringList = new List( 'string' );
   ```
 
 - **getAllValues()**
+
   ```js
   .getAllValues()
   ```
 
 - **getAllKeys()**
+
   ```js
   /**
    * Returns an array with all the dictionary's keys.
@@ -421,6 +459,7 @@ const myStringList = new List( 'string' );
   ```
 
 - **lastValue**
+
   ```js
   /**
    * Returns the last element of the Dictionary or false.
@@ -432,18 +471,20 @@ const myStringList = new List( 'string' );
   ```
 
 - **containsKey( key )**
+
   ```js
   /**
    * O(n)
-   * 
+   *
    * @param { any } key
-   * 
+   *
    * @returns { boolean }
    */
   .containsKey( key )
   ```
 
 - **getByIndex( index )**
+
   ```js
   /**
    * Get a value with its index. Returns an array with the values.
@@ -457,6 +498,7 @@ const myStringList = new List( 'string' );
   ```
 
 - **getKeyByIndex( index )**
+
   ```js
   /**
    * Get a key by its index.
@@ -470,6 +512,7 @@ const myStringList = new List( 'string' );
   ```
 
 - **getByKey( key )**
+
   ```js
   /**
    * Returns the value by key or false if not found.
@@ -483,6 +526,7 @@ const myStringList = new List( 'string' );
   ```
 
 - **findIndexOfKey( key )**
+
   ```js
   /**
    * Returns the index of the provided key, or false if not found.
@@ -496,10 +540,11 @@ const myStringList = new List( 'string' );
   ```
 
 - **add( key, value )**
+
   ```js
   /**
    * O(n)
-   * 
+   *
    * @param { any } key
    * @param { any } value
    */
@@ -507,32 +552,36 @@ const myStringList = new List( 'string' );
   ```
 
 - **removeFirst()**
+
   ```js
   .removeFirst()
   ```
 
 - **removeLast()**
+
   ```js
   .removeLast()
   ```
 
 - **removeByIndex( index )**
+
   ```js
   /**
    * Removes an item from the Dictioary by index.
    * O(1)
-   * 
+   *
    * @param { number } index
    */
   .removeByIndex( index )
   ```
 
 - **remove( key )**
+
   ```js
   /**
    * Removes an item from the Dictionary with the provided key.
    * O(n)
-   * 
+   *
    * @param { any } key
    *
    * @return { bool }
@@ -541,6 +590,7 @@ const myStringList = new List( 'string' );
   ```
 
 - **updateByKey( key, newValue )**
+
   ```js
   /**
    * Updates an item in the Dictionary with the provided key.
@@ -555,6 +605,7 @@ const myStringList = new List( 'string' );
   ```
 
 - **updateByIndex( idx, newValue )**
+
   ```js
   /**
    * Updates an item in the Dictionary with the provided index.
@@ -569,10 +620,11 @@ const myStringList = new List( 'string' );
   ```
 
 - **forEachValue( Callback )**
+
   ```js
   /**
    * O(n)
-   * 
+   *
    * @param { Function } Callback (value)
    */
   .forEachValue( Callback )
@@ -580,7 +632,8 @@ const myStringList = new List( 'string' );
 
 [^API](#api-index)
 
-#### DictionaryObj <a name="list"></a>
+#### DictionaryObj <a name="dictionaryObj"></a>
+
 ```js
 /**
  * A lightweight implementation of a dictionary, based on an object.
@@ -588,21 +641,25 @@ const myStringList = new List( 'string' );
 ```
 
 - **count**
+
   ```js
   .count
   ```
 
 - **clear()**
+
   ```js
   .clear()
   ```
 
 - **get( key )**
+
   ```js
   .get( key )
   ```
 
 - **getValue( key )**
+
   ```js
   /**
    * Same as .get( key ).
@@ -611,38 +668,141 @@ const myStringList = new List( 'string' );
   ```
 
 - **containsKey( key )**
+
   ```js
   .containsKey( key )
   ```
 
 - **getAllKeys()**
+
   ```js
   .getAllKeys()
   ```
 
 - **getAllValues()**
+
   ```js
   .getAllValues()
   ```
 
 - **add( key, value )**
+
   ```js
   .add( key, value )
   ```
 
 - **update( key, value )**
+
   ```js
   .update( key, value )
   ```
 
-- **remove( key, value )**
+- **remove( key )**
+
   ```js
-  .remove( key, value )
-  ```js
+  /**
+   * Removes an item from the DictionaryObj with the provided key.
+   *
+   * @param { any } key
+   *
+   * @returns { boolean }
+   */
+  .remove( key )
+  ```
 
 - **forEachValue( Callback )**
+
   ```js
   .forEachValue( Callback )
+  ```
+
+[^API](#api-index)
+
+#### Stack <a name="stack"></a>
+
+```js
+/**
+ * A simple LIFO (last-in, first-out) stack.
+ */
+```
+
+- **length**
+
+  ```js
+  .length
+  ```
+
+- **isEmpty**
+
+  ```js
+  .isEmpty
+  ```
+
+- **clear()**
+
+  ```js
+  /**
+   * Sets the array storage value to null and creates a new one.
+   * ~O(1)
+   */
+  .clear()
+  ```
+
+- **clearSafe()**
+
+  ```js
+  /**
+   * Pops every element of the array storage,
+   * maintaining the same underling array store.
+   * O(n)
+   */
+  .clearSafe()
+  ```
+
+- **push( value )**
+
+  ```js
+  /**
+   * Sets the top element.
+   *
+   * @param { any } value
+   */
+  .push( value )
+  ```
+
+- **pop()**
+
+  ```js
+  /**
+   * Pops the most recent element and returns it (top),
+   * or Errors.codeEmpty ('&C-EMPTY') if the stack is empty.
+   *
+   * @returns { any }
+   */
+  .pop()
+  ```
+
+- **peek()**
+
+  ```js
+  /**
+   * Returns the most recent element (top) without removing it,
+   * or Errors.codeEmpty ('&C-EMPTY') if the stack is empty.
+   *
+   * @returns { any }
+   */
+  .peek()
+  ```
+
+- **peekAll()**
+
+  ```js
+  /**
+   * Returns all elements in an array, bottom to top.
+   *
+   * @returns { any[] }
+   */
+  .peekAll()
   ```
 
 [^API](#api-index)

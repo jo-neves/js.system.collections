@@ -12,9 +12,9 @@
 	"lastUpdateCheck": "2020-04-12T21:36:05.000Z",
 	"sourceFiles": [
 		{
-			"source": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\js.system.collections.min.header.js",
+			"source": "js.system.collections.min.header.js",
 			"output": {
-				"path": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\dist",
+				"path": "dist",
 				"name": "js.system.collections.min.js"
 			},
 			"config": {
@@ -22,12 +22,12 @@
 			}
 		},
 		{
-			"source": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\js.system.collections.header.js",
+			"source": "js.system.collections.header.js",
 			"output": {
-				"path": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\dist",
+				"path": "dist",
 				"name": "js.system.collections.js"
 			}
 		}
 	],
-	"nodeModulesPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\js.system.collections\\js.system.collections\\node_modules"
+	"nodeModulesPath": "node_modules"
 }
