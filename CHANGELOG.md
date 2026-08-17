@@ -2,6 +2,13 @@
 
 &nbsp;
 
+#### v1.8.1 - 17/08/2026
+
+- Added TypeScript declarations (`index.d.ts`), shipped via `package.json`'s `types` field. `List<T>`, `Dict<TKey, TValue>`, `Dictionary<TKey, TValue>`, `DictionaryObj<TValue>` and `Stack<T>` are all generic, and `Dict`'s key type is constrained to `string | number` to match what it actually supports at runtime.
+- Trimmed the published npm package. Unpacked size dropped from 143.1 kB to 90.8 kB.
+
+&nbsp;
+
 #### v1.8.0 - 17/08/2026
 
 - Shipped `Stack` as a public export (`index.js`, `dist/`), fixing its broken module wrapper (a double `require()`) and its `push`/`pop`/`peek`/`peekAll` methods, which referenced a non-existent `this.____elements` instead of `this.elements`.

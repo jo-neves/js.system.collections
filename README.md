@@ -1,7 +1,7 @@
 # js.system.collections
 
 [![npm](https://img.shields.io/npm/v/js.system.collections.svg)](https://www.npmjs.com/package/js.system.collections)
-[![LICENSE](https://img.shields.io/npm/l/merger-js.svg)](https://github.com/joao-neves95/js.system.collections/blob/master/LICENSE.md)
+[![LICENSE](https://img.shields.io/npm/l/js.system.collections.svg)](https://github.com/jo-neves/js.system.collections/blob/master/LICENSE.md)
 
 Vanilla JavaScript ES collections inspired by .NET for Node.js and the browser.
 
@@ -53,6 +53,20 @@ const { Dictionary, List } = require( 'js.system.collections' );
 
 const myList = new List( 'any' );
 const myStringList = new List( 'string' );
+```
+
+#### Use with TypeScript
+
+Type declarations are bundled (`index.d.ts`, referenced via `package.json`'s `types` field) — no `@types/` package needed. `List`, `Dict`, `Dictionary`, `DictionaryObj` and `Stack` are all generic:
+
+```ts
+import { List, Dict } from 'js.system.collections';
+
+const myList = new List<number>( 'int' );
+myList.add( 42 );
+
+const myDict = new Dict<string, number>();
+myDict.add( 'answer', 42 );
 ```
 
 &nbsp;

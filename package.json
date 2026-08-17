@@ -1,8 +1,9 @@
 {
   "name": "js.system.collections",
   "description": "Vanilla JavaScript ES collections inspired by .NET for Node.js and the browser.",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "node test/test.js"
   },
@@ -10,7 +11,7 @@
     "name": "João Neves",
     "url": "https://github.com/jo-neves"
   },
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
   "homepage": "https://github.com/jo-neves/js.system.collections",
   "readme": "https://github.com/jo-neves/js.system.collections/blob/master/README.md",
   "repository": {
