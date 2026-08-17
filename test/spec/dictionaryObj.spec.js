@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019-2020 João Pedro Martins Neves - All Rights Reserved.
+ * Copyright (c) 2019-2026 João Pedro Martins Neves - All Rights Reserved.
  *
  * js.system.collections is licensed under the MIT license,
  * located in the root of this project, under the name "LICENSE.md".
@@ -136,6 +136,29 @@ describe( 'The DictionaryObj', function () {
   afterAll( function () {
     global.myDict = null;
     global.myDict = undefined;
+  } );
+
+} );
+
+describe( 'The DictionaryObj edge cases', function () {
+
+  it( 'should treat update() on a non-existing key as an insert and count it once', function () {
+    const dict = new DictionaryObj();
+    dict.add( 'a', 1 );
+
+    dict.update( 'b', 2 );
+
+    expect( dict.count ).toBe( 2 );
+    expect( dict.getValue( 'b' ) ).toBe( 2 );
+  } );
+
+  it( 'should not corrupt the count when removing a non-existing key', function () {
+    const dict = new DictionaryObj();
+    dict.add( 'a', 1 );
+
+    expect( dict.remove( 'does-not-exist' ) ).toBeFalse();
+    expect( dict.count ).toBe( 1 );
+    expect( dict.getValue( 'a' ) ).toBe( 1 );
   } );
 
 } );
