@@ -16,7 +16,7 @@
 
 &nbsp;
 
-#### *v1.7.3 11/12/2020
+#### v1.7.3 11/12/2020
 
 - Small improvement on the `Dict` hashing system.
 
